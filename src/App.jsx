@@ -293,7 +293,7 @@ export default function App() {
                 style={{ width: '100%', padding: '9px 12px', minHeight: 120, resize: 'vertical', lineHeight: 1.6 }}
               />
             </FormRow>
-            <FormRow label="Raw Transaction Data" hint="Optional — paste CSV, JSON, or plain text. Claude will reference specific transactions in the narrative.">
+            <FormRow label="Raw Transaction Data" hint="Optional — paste CSV, JSON, or plain text. Specific transactions will be referenced in the narrative.">
               <textarea
                 placeholder="date,amount,type,account&#10;2024-01-03,$9800,cash deposit,****4821&#10;2024-01-05,$9800,cash deposit,****9034"
                 value={form.transactions}
