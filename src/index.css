@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg:        #080b14;
+  --surface:   #0d1117;
+  --surface-2: #161b22;
+  --border:    rgba(255,255,255,0.07);
+  --border-2:  rgba(255,255,255,0.12);
+  --text:      #e6edf3;
+  --text-muted:#7d8590;
+  --text-dim:  #484f58;
+  --accent:    #f0b429;
+  --accent-dim:rgba(240,180,41,0.10);
+  --green:     #3fb950;
+  --red:       #f85149;
+  --blue:      #388bfd;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+textarea, input, select {
+  font-family: inherit;
+  font-size: 13px;
+  color: var(--text);
+  background: var(--surface-2);
+  border: 1px solid var(--border-2);
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+textarea:focus, input:focus, select:focus {
+  border-color: var(--accent);
+}
+select option { background: #161b22; }
+
+.skeleton {
+  background: linear-gradient(90deg, var(--surface-2) 25%, #1f2937 50%, var(--surface-2) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+  border-radius: 6px;
+}
+
+@keyframes shimmer { 0%{background-position:200% 0} 100%{background-position:-200% 0} }
+@keyframes fadeUp  { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
+@keyframes spin    { to{transform:rotate(360deg)} }
+@keyframes pulse   { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+.fade-up { animation: fadeUp 0.35s ease forwards; }
+
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-2); border-radius: 3px; }
